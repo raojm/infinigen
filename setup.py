@@ -14,6 +14,8 @@ str_true = "True"
 MINIMAL_INSTALL = os.environ.get('INFINIGEN_MINIMAL_INSTALL') == str_true
 BUILD_TERRAIN = os.environ.get('INFINIGEN_INSTALL_TERRAIN', str_true) == str_true
 BUILD_OPENGL = os.environ.get('INFINIGEN_INSTALL_CUSTOMGT', "False") == str_true
+BUILD_TERRAIN = True
+BUILD_OPENGL = True
 
 dont_build_steps = ["clean", "egg_info", "dist_info", "sdist", "--help"]
 is_build_step = not any(x in sys.argv[1] for x in dont_build_steps) 

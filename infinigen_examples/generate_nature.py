@@ -387,10 +387,10 @@ def compose_scene(output_folder, scene_seed, **params):
         c.all_objects for c in bpy.data.collections if c.name.startswith('placeholders:')
     ))
 
-    add_simulated_river = lambda: fluid.make_river(terrain_mesh, placeholders, output_folder=output_folder)
+    add_simulated_river = lambda: fluid.flip_fluid.make_river(terrain_mesh, placeholders, output_folder=output_folder)
     p.run_stage('simulated_river', add_simulated_river, use_chance=False)
 
-    add_tilted_river = lambda: fluid.make_tilted_river(terrain_mesh, placeholders, output_folder=output_folder)
+    add_tilted_river = lambda: fluid.flip_fluid.make_tilted_river(terrain_mesh, placeholders, output_folder=output_folder)
     p.run_stage('tilted_river', add_tilted_river, use_chance=False)   
 
     p.save_results(output_folder/'pipeline_coarse.csv')

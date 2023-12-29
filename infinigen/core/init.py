@@ -177,6 +177,6 @@ def configure_blender():
     bpy.context.scene.cycles.volume_preview_step_rate = 0.1
     bpy.context.scene.cycles.volume_max_steps = 32
 
-    import_addons(['ant_landscape', 'real_snow'])
+    import_addons(['ant_landscape', 'real_snow', 'flip_fluids_addon'])
 
     
